@@ -13,3 +13,27 @@
 | 9. Get price of filling      | Inventory         | stock: Map<String, Float>         | getItemPrice(filling: String): float            | Returns price of filling.                           |
 | 10. Check if item exists     | Basket, Inventory | stock: Map<String, Float>         | isInMenu(item: String): boolean                 | Returns true if the item is in stock, false if not. |
 
+## Class Diagram
+
+```mermaid
+classDiagram
+    direction LR
+    class Basket {
+        -items : List~String~
+        -capacity : int
+        +addItem(item : String) void
+        +removeItem(item : String)  boolean
+        +isFull()  boolean
+        +changeCapacity(newCapacity : int)  void
+        +totalCost() float
+        +addFillingToBagel(bagel : String, filling : String)  void
+    }
+
+    class Inventory {
+        -stock : Map~String, Float~
+        +getItemPrice(item : String) : float
+        +isInMenu(item : String) : boolean
+    }
+
+    Basket --> Inventory : uses
+```
