@@ -9,7 +9,7 @@ class BasketTest {
         Basket basket = new Basket();
         basket.addItem("BGLO");
 
-        Assertions.assertEquals(1, basket.getItems().size);
+        Assertions.assertEquals(1, basket.getItems().size());
     }
 
 }
